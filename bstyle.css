@@ -1,0 +1,13 @@
+body {
+    background-color: rgb(39, 42, 42);
+}
+
+.card {
+    width: 95%;
+    height: 15vw;
+    object-fit: cover;
+}
+
+.card:hover {
+    opacity: 70%;
+}
