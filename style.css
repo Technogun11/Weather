@@ -1,0 +1,161 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    width: 500vh;
+    height: 500vh;
+    overflow: hidden;
+    cursor: none;
+    z-index: 0;
+}
+
+@keyframes ca1 {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(3);
+    }
+    100% {
+        transform: scale(1);
+        opacity: 0;
+    }
+}
+
+.cursor {
+    width: 15px;
+    height: 15px;
+    border: 2px solid #fff;
+    border-radius: 10px;
+    position: absolute;
+    overflow: hidden;
+    transition-duration: 150ms;
+    transition-timing-function: ease-out;
+    background-color: rgba(0, 0, 0, .3);
+    z-index: 1;
+    pointer-events: none;
+}
+
+.link-grow {
+    transform: scale(2);
+}
+
+.expand {
+    animation: ca1.5s forwards;
+    border: 2px solid rgb(53, 49, 49);
+}
+
+body {
+    background-image: url('https://www.desktopbackground.org/download/o/2012/05/21/393438_weather-wallpapers_1920x1080_h.jpg');
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-family: "montserrat", sans-serif;
+    font-weight: 500;
+    color: black;
+}
+
+h1 {
+    padding-bottom: 30px;
+    font-weight: 900;
+    font-size: 35px;
+}
+
+.card {
+    align-items: center;
+    text-align: center;
+    width: 300px;
+    height: 200px;
+    margin-top: 3%;
+    display: block;
+    border: 3px solid gold;
+    background-color: white;
+    color: black;
+    padding: 3%;
+    border-radius: 6%;
+}
+
+.card:hover {
+    color: cyan;
+    transform: scale(1.1);
+    transition-duration: 1s;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.form {
+    width: 30%;
+    position: relative;
+    height: 60px;
+    overflow: hidden;
+}
+
+.form input {
+    width: 100%;
+    height: 100%;
+    font-size: larger;
+    color: black;
+    padding-top: 20px;
+    border: none;
+    cursor: none;
+}
+
+.form label {
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    border-bottom: 1px solid white;
+}
+
+.form label::after {
+    content: "";
+    position: absolute;
+    bottom: -1px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    border-bottom: 3px solid gold;
+    transform: translateX(-100%);
+    transition: all 0.3s ease;
+}
+
+.content-name {
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    padding-bottom: 5px;
+    transition: all 0.3s ease;
+}
+
+.form input:focus {
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    outline: none;
+}
+
+.form input:focus+.label-name .content-name,
+.form input:valid+.label-name .content-name {
+    transform: translateY(-150%);
+    font-size: 16px;
+    left: 0px;
+    color: #0cffff;
+}
+
+.form input:focus+.label-name::after,
+.form input:valid+.label-name::after {
+    transform: translateX(0%);
+}
+
+.form label {
+    position: absolute;
+    bottom: 0px;
+    left: 0%;
+    width: 100%;
+}
