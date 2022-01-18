@@ -16,7 +16,7 @@ function getVal() {
                 console.log("Success")
                 let we = JSON.parse(request.responseText);
                 console.log(we);
-                document.getElementById('weather').innerHTML = 'Name : ' + we.name + 'Temperature : ' + we.main.temp + ' F' + 'Humidity : ' + we.main.humidity + 'Pressure : ' + we.main.pressure;
+                document.getElementById('weather').innerHTML = 'Name : ' + we.name + "<br><br>" + 'Temperature : ' + we.main.temp + ' F' + "<br><br>" + 'Humidity : ' + we.main.humidity + "<br><br>" + 'Pressure : ' + we.main.pressure;
                 // let imgsrc = 'https://openweathermap.org/img/w/' + we.weather[0].icon + '.png';
                 // document.getElementById('myimg').src = imgsrc;
                 input.addEventListener('keyup', function(event) {
@@ -26,6 +26,11 @@ function getVal() {
                     }
                 })
             } else {
+                document.getElementById('weather').innerHTML = 'Last time I checked their was no such place....';
+                // input.addEventListener('keyup', function(event) {
+                //     document.getElementById('weather').innerHTML = '';
+                //     c.classList.remove('card');
+                // })
                 console.log("Couldn't connect with the server");
             }
         }
