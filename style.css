@@ -79,11 +79,11 @@ h1 {
     color: cyan;
     background-color: rgba(0, 0, 0, 0.7);
     transition: ease-in-out;
+    transition-duration: 1s;
 }
 
 .card:hover {
     transform: scale(1.1);
-    transition-duration: 1s;
 }
 
 .form {
