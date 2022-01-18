@@ -69,7 +69,7 @@ h1 {
 .card {
     align-items: center;
     text-align: center;
-    width: 250px;
+    width: 200px;
     height: 150px;
     margin-top: 3%;
     display: block;
@@ -79,7 +79,7 @@ h1 {
     color: cyan;
     background-color: rgba(0, 0, 0, 0.7);
     transition: ease-in-out;
-    transition-duration: 1s;
+    transition-duration: 0.5s;
 }
 
 .card:hover {
