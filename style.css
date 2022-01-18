@@ -78,6 +78,7 @@ h1 {
     border-radius: 5%;
     color: cyan;
     background-color: rgba(0, 0, 0, 0.7);
+    transition: ease-in-out;
 }
 
 .card:hover {
