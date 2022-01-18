@@ -1,5 +1,12 @@
 function getVal() {
     const val = document.querySelector('input').value;
+    var c = document.getElementById('weather');
+    var input = document.getElementById("myInput");
+    input.addEventListener('keyup', function(event) {
+        if (event.key === 'Enter') {
+            c.classList.add('card');
+        }
+    })
     if (val != '') {
         let request = new XMLHttpRequest()
         let url = 'https://api.openweathermap.org/data/2.5/weather?q=' + val + '&appid=75c2adb89a73c28cb48b1bdb22878e1e';
@@ -9,9 +16,15 @@ function getVal() {
                 console.log("Success")
                 let we = JSON.parse(request.responseText);
                 console.log(we);
-                document.getElementById('weather').innerHTML = we.main.temp + ' F';
-                let imgsrc = 'https://openweathermap.org/img/w/' + we.weather[0].icon + '.png';
-                document.getElementById('myimg').src = imgsrc;
+                document.getElementById('weather').innerHTML = 'Name : ' + we.name + 'Temperature : ' + we.main.temp + ' F' + 'Humidity : ' + we.main.humidity + 'Pressure : ' + we.main.pressure;
+                // let imgsrc = 'https://openweathermap.org/img/w/' + we.weather[0].icon + '.png';
+                // document.getElementById('myimg').src = imgsrc;
+                input.addEventListener('keyup', function(event) {
+                    if (event.key != 'Enter') {
+                        document.getElementById('weather').innerHTML = '';
+                        c.classList.remove('card');
+                    }
+                })
             } else {
                 console.log("Couldn't connect with the server");
             }
